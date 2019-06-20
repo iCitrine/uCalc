@@ -1,0 +1,92 @@
+
+$font-stack: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 
+            'Open Sans', 'Helvetica Neue', sans-serif;
+$bg-color: #efefef;
+$border-color: #999;
+$font-color: #333;
+$font-size: 15px;
+$transition-fast: all 0.1s ease-out;
+$transition-slow: all 0.2s ease-out;
+
+@mixin borderbox() {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+@mixin transition($propt) {
+    -webkit-transition: $propt;
+    -moz-transition: $propt;
+    -o-transition: $propt;
+    transition: $propt;
+}
+
+#ucalc {
+    margin: auto;
+    position: absolute;
+    font: $font-size $font-stack;
+    font-weight: normal;
+    text-decoration: none;
+    color: $font-color;
+    width: 290px;
+}
+
+.ucalc-container, .ucalc-container:before, .ucalc-container:after {
+    @include borderbox();
+    // prevent text selection 
+    -webkit-touch-callout: none; // iOS Safari 
+    -webkit-user-select: none;   // Chrome all and Safari all 
+       -moz-user-select: none;   // Firefox all 
+        -ms-user-select: none;   // IE 10+ and Edge 
+            user-select: none;   // Non-prefixed version, Chrome and Opera
+}
+
+.ucalc-container {
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+    box-shadow: 0px 2px 20px -1px $border-color;
+    padding: 3px;
+    clear: both;
+}
+
+#ucalc-header {
+    @include borderbox();
+    padding: 2px;
+    width: 100%;
+    cursor: move;
+}
+
+#ucalc-nav {
+    @include borderbox();
+    padding: 2px 0;
+    width: 100%;
+}
+
+#ucalc-display-container {
+    @include borderbox();
+    padding: 10px;
+}
+
+.ucalc-btn-row {
+    @include borderbox();
+    width: 100%;
+    clear: both;
+}
+
+#ucalc-header:before,
+#ucalc-header:after,
+#ucalc-nav:before,
+#ucalc-nav:after,
+#ucalc-display-container:before,
+#ucalc-display-container:after,
+.ucalc-btn-row:before,
+.ucalc-btn-row:after {
+    display: table;
+    content: " ";
+}
+#ucalc-header:after,
+#ucalc-nav:after,
+#ucalc-display-container:after,
+.ucalc-btn-row:after {
+    clear: both;
+}

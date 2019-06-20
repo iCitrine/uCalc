@@ -1,0 +1,30 @@
+
+#ucalc-title {
+    float: left;
+    font-size: 12px;
+    padding: 0 8px;
+}
+
+.ucalc-display {
+    @include borderbox();
+    text-align: right;
+    line-height: 20px;
+    font-size: 18px;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+}
+.ucalc-display.e {
+    position: relative;
+}
+.ucalc-display #e-box {
+    width: 99999px;
+    display: block;
+    position: absolute;
+    right: 0;
+}
+.ucalc-display.r {
+    line-height: 40px;
+    font-size: 27px;
+    height: 40px;
+}

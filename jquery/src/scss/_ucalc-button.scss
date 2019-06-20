@@ -1,0 +1,291 @@
+$btn-bg-color: #fafafa;
+$btn-border-color: #eee;
+$btn-color: #333;
+
+$btn-bg-color-hover: #e6e6e6;
+$btn-border-color-hover: #8c8c8c;
+$btn-color-hover: #333;
+
+$btn-bg-color-active: #c0c0c0;
+$btn-border-color-active: #adadad;
+$btn-color-active: #333;
+//exit
+$btn-bg-color-exit: #d43f3a;
+$btn-border-color-exit: #d43f3a;
+$btn-color-exit: #fff;
+//menu
+$btn-bg-color-l: #e6e6e6;
+$btn-border-color-l: #ccc;
+$btn-color-l: #333;
+$btn-bg-color-l2: #c0c0c0;
+$btn-border-color-l2: #adadad;
+$btn-color-l2: #333;
+//cancel
+$btn-bg-color-c: #fafafa;
+$btn-border-color-c: #eee;
+$btn-color-c: #333;
+$btn-bg-color-c2: #e6e6e6;
+$btn-border-color-c2: #8c8c8c;
+$btn-color-c2: #333;
+$btn-bg-color-c3: #c0c0c0;
+$btn-border-color-c3: #adadad;
+$btn-color-c3: #333;
+//operator
+$btn-bg-color-x: #fafafa;
+$btn-border-color-x: #eee;
+$btn-color-x: #333;
+$btn-bg-color-x2: #e6e6e6;
+$btn-border-color-x2: #8c8c8c;
+$btn-color-x2: #333;
+$btn-bg-color-x3: #c0c0c0;
+$btn-border-color-x3: #adadad;
+$btn-color-x3: #333;
+//numbers
+$btn-bg-color-n: #fff;
+$btn-border-color-n: #eee;
+$btn-color-n: #333;
+$btn-bg-color-n2: #e6e6e6;
+$btn-border-color-n2: #8c8c8c;
+$btn-color-n2: #333;
+$btn-bg-color-n3: #c0c0c0;
+$btn-border-color-n3: #adadad;
+$btn-color-n3: #333;
+//equal
+$btn-bg-color-xx: #fff;
+$btn-border-color-xx: #eee;
+$btn-color-xx: #333;
+$btn-bg-color-xx2: #e6e6e6;
+$btn-border-color-xx2: #8c8c8c;
+$btn-color-xx2: #333;
+$btn-bg-color-xx3: #c0c0c0;
+$btn-border-color-xx3: #adadad;
+$btn-color-xx3: #333;
+
+.ucalc-btn {
+    @include borderbox();
+    border-collapse: collapse;
+    width: 20%;
+    height: 40px;
+    line-height: 36px;
+    overflow: hidden;
+    font-size: $font-size;
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+    cursor: pointer;
+    border-radius: 0;
+    border: 1px solid $btn-border-color;
+    color: $btn-color;
+    background-color: $btn-bg-color;
+    position: relative;
+    float: left;
+
+    @include transition($transition-fast);
+}
+
+.ucalc-btn:focus {
+    color: $btn-color-hover;
+    background-color: $btn-bg-color-hover;
+    border-color: $btn-border-color-hover;
+}
+.ucalc-btn:hover {
+    color: $btn-color-hover;
+    background-color:  $btn-bg-color-hover;
+    border-color: $btn-border-color-hover;
+}
+.ucalc-btn:active {
+    color: $btn-color-active;
+    background-color: $btn-bg-color-active;
+    border-color: $btn-border-color-active; 
+}
+//exit
+.ucalc-btn.exit {
+    float: right;
+    width: 44px;
+    height: 24px;
+    line-height: 22px;
+    font-size: 16px;
+    position: absolute;
+    top: 1px;
+    right: 0;
+    background-color: transparent;
+    border-color: transparent;
+}
+.ucalc-btn.exit:focus {
+    background-color: $btn-bg-color-exit;
+    color: $btn-color-exit;
+    border-color: $btn-border-color-exit;
+}
+.ucalc-btn.exit:hover {
+    background-color: $btn-bg-color-exit;
+    color: $btn-color-exit;
+    border-color: $btn-border-color-exit;
+}
+.ucalc-btn.exit:active {
+    background-color: transparent;
+    color: $btn-color;
+    border-color: transparent;
+}
+// menu
+.ucalc-btn.l {
+    width: 40px;
+    height: auto;
+    line-height: 30px;
+    background-color: transparent;
+    border-color: transparent;
+}
+.ucalc-btn.l:focus {
+    background-color: $btn-bg-color-l;
+    color: $btn-color-l;
+    border-color: $btn-border-color-l;
+}
+.ucalc-btn.l:hover {
+    background-color: $btn-bg-color-l;
+    color: $btn-color-l;
+    border-color: $btn-border-color-l;
+}
+.ucalc-btn.l:active {
+    background-color: $btn-bg-color-l2;
+    color: $btn-color-l2;
+    border-color: $btn-border-color-l2;
+}
+
+.ucalc-btn.menu, .ucalc-btn.history {
+    font-size: 18px;
+}
+.ucalc-btn.history {
+    float: right;
+}
+//unit and memory
+.ucalc-btn.u, .ucalc-btn.m {
+    font-size: 12px;
+    font-weight: bold;
+    width: 16.66666667%;
+    height: auto;
+    line-height: 30px;
+    background-color: transparent;
+    border-color: transparent;
+}
+.ucalc-btn.u:focus,
+.ucalc-btn.m:focus {
+    background-color: $btn-bg-color-hover;
+    border-color: $btn-border-color-hover;
+}
+.ucalc-btn.u:hover,
+.ucalc-btn.m:hover {
+    background-color: $btn-bg-color-l;
+    border-color: $btn-border-color-l;
+}
+.ucalc-btn.u:active,
+.ucalc-btn.m:active {
+    background-color: $btn-bg-color-active;
+    border-color: $btn-border-color-active;
+}
+
+
+.ucalc-btn.mc, 
+.ucalc-btn.mr,
+.ucalc-btn.mm,
+.ucalc-btn.m-,
+.ucalc-btn.ms {
+
+}
+//shift
+.ucalc-btn.s {
+    font-size: 22px;
+    font-weight: bold;
+}
+//cancel
+.ucalc-btn.c {
+    background-color: $btn-bg-color-c;
+    color: $btn-color-c;
+    border-color: $btn-border-color-c;
+}
+.ucalc-btn.c:focus {
+    background-color: $btn-bg-color-c2;
+    color: $btn-color-c2;
+    border-color: $btn-border-color-c2;
+}
+.ucalc-btn.c:hover {
+    background-color: $btn-bg-color-c2;
+    color: $btn-color-c2;
+    border-color: $btn-border-color-c2;
+}
+.ucalc-btn.c:active {
+    background-color: $btn-bg-color-c3;
+    color: $btn-color-c3;
+    border-color: $btn-border-color-c3;
+}
+//operator
+.ucalc-btn.x {
+    font-size: 24px;
+    background-color: $btn-bg-color-x;
+    color: $btn-color-x;
+    border-color: $btn-border-color-x;
+}
+.ucalc-btn.x:focus {
+    background-color: $btn-bg-color-x2;
+    color: $btn-color-x2;
+    border-color: $btn-border-color-x2;
+}
+.ucalc-btn.x:hover {
+    background-color: $btn-bg-color-x2;
+    color: $btn-color-x2;
+    border-color: $btn-border-color-x2;
+}
+.ucalc-btn.x:active {
+    background-color: $btn-bg-color-x3;
+    color: $btn-color-x3;
+    border-color: $btn-border-color-x3;
+}
+
+//numbers
+.ucalc-btn.n {
+    font-size: 22px;
+    font-weight: bold;
+    background-color: $btn-bg-color-n;
+    color: $btn-color-n;
+    border-color: $btn-border-color-n;
+}
+.ucalc-btn.n:focus {
+    background-color: $btn-bg-color-n2;
+    color: $btn-color-n2;
+    border-color: $btn-border-color-n2;
+}
+.ucalc-btn.n:hover {
+    background-color: $btn-bg-color-n2;
+    color: $btn-color-n2;
+    border-color: $btn-border-color-n2;
+}
+.ucalc-btn.n:active {
+    background-color: $btn-bg-color-n3;
+    color: $btn-color-n3;
+    border-color: $btn-border-color-n3;
+}
+
+//equal
+.ucalc-btn.xx {
+    font-size: 24px;
+    background-color: $btn-bg-color-xx;
+    color: $btn-color-xx;
+    border-color: $btn-border-color-xx;
+}
+.ucalc-btn.xx:focus {
+    background-color: $btn-bg-color-xx2;
+    color: $btn-color-xx2;
+    border-color: $btn-border-color-xx2;
+}
+.ucalc-btn.xx:hover {
+    background-color: $btn-bg-color-xx2;
+    color: $btn-color-xx2;
+    border-color: $btn-border-color-xx2;
+}
+.ucalc-btn.xx:active {
+    background-color: $btn-bg-color-xx3;
+    color: $btn-color-xx3;
+    border-color: $btn-border-color-xx3;
+}
