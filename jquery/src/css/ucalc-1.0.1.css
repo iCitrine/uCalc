@@ -1,0 +1,362 @@
+#ucalc {
+  margin: auto;
+  position: absolute;
+  font: 15px -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: normal;
+  text-decoration: none;
+  color: #333;
+  width: 290px;
+}
+
+.ucalc-container, .ucalc-container:before, .ucalc-container:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ucalc-container {
+  background-color: #efefef;
+  border: 1px solid #999;
+  box-shadow: 0px 2px 20px -1px #999;
+  padding: 3px;
+  clear: both;
+}
+
+#ucalc-header {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2px;
+  width: 100%;
+  cursor: move;
+}
+
+#ucalc-nav {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2px 0;
+  width: 100%;
+}
+
+#ucalc-display-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.ucalc-btn-row {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  clear: both;
+}
+
+#ucalc-header:before,
+#ucalc-header:after,
+#ucalc-nav:before,
+#ucalc-nav:after,
+#ucalc-display-container:before,
+#ucalc-display-container:after,
+.ucalc-btn-row:before,
+.ucalc-btn-row:after {
+  display: table;
+  content: " ";
+}
+
+#ucalc-header:after,
+#ucalc-nav:after,
+#ucalc-display-container:after,
+.ucalc-btn-row:after {
+  clear: both;
+}
+
+.ucalc-btn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  width: 20%;
+  height: 40px;
+  line-height: 36px;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  border-radius: 0;
+  border: 1px solid #eee;
+  color: #333;
+  background-color: #fafafa;
+  position: relative;
+  float: left;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.ucalc-btn:focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+
+.ucalc-btn:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+
+.ucalc-btn:active {
+  color: #333;
+  background-color: #c0c0c0;
+  border-color: #adadad;
+}
+
+.ucalc-btn.exit {
+  float: right;
+  width: 44px;
+  height: 24px;
+  line-height: 22px;
+  font-size: 16px;
+  position: absolute;
+  top: 1px;
+  right: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.ucalc-btn.exit:focus {
+  background-color: #d43f3a;
+  color: #fff;
+  border-color: #d43f3a;
+}
+
+.ucalc-btn.exit:hover {
+  background-color: #d43f3a;
+  color: #fff;
+  border-color: #d43f3a;
+}
+
+.ucalc-btn.exit:active {
+  background-color: transparent;
+  color: #333;
+  border-color: transparent;
+}
+
+.ucalc-btn.l {
+  width: 40px;
+  height: auto;
+  line-height: 30px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.ucalc-btn.l:focus {
+  background-color: #e6e6e6;
+  color: #333;
+  border-color: #ccc;
+}
+
+.ucalc-btn.l:hover {
+  background-color: #e6e6e6;
+  color: #333;
+  border-color: #ccc;
+}
+
+.ucalc-btn.l:active {
+  background-color: #c0c0c0;
+  color: #333;
+  border-color: #adadad;
+}
+
+.ucalc-btn.menu, .ucalc-btn.history {
+  font-size: 18px;
+}
+
+.ucalc-btn.history {
+  float: right;
+}
+
+.ucalc-btn.u, .ucalc-btn.m {
+  font-size: 12px;
+  font-weight: bold;
+  width: 16.66666667%;
+  height: auto;
+  line-height: 30px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.ucalc-btn.u:focus,
+.ucalc-btn.m:focus {
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+
+.ucalc-btn.u:hover,
+.ucalc-btn.m:hover {
+  background-color: #e6e6e6;
+  border-color: #ccc;
+}
+
+.ucalc-btn.u:active,
+.ucalc-btn.m:active {
+  background-color: #c0c0c0;
+  border-color: #adadad;
+}
+
+.ucalc-btn.s {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.ucalc-btn.c {
+  background-color: #fafafa;
+  color: #333;
+  border-color: #eee;
+}
+
+.ucalc-btn.c:focus {
+  background-color: #e6e6e6;
+  color: #333;
+  border-color: #8c8c8c;
+}
+
+.ucalc-btn.c:hover {
+  background-color: #e6e6e6;
+  color: #333;
+  border-color: #8c8c8c;
+}
+
+.ucalc-btn.c:active {
+  background-color: #c0c0c0;
+  color: #333;
+  border-color: #adadad;
+}
+
+.ucalc-btn.x {
+  font-size: 24px;
+  background-color: #fafafa;
+  color: #333;
+  border-color: #eee;
+}
+
+.ucalc-btn.x:focus {
+  background-color: #e6e6e6;
+  color: #333;
+  border-color: #8c8c8c;
+}
+
+.ucalc-btn.x:hover {
+  background-color: #e6e6e6;
+  color: #333;
+  border-color: #8c8c8c;
+}
+
+.ucalc-btn.x:active {
+  background-color: #c0c0c0;
+  color: #333;
+  border-color: #adadad;
+}
+
+.ucalc-btn.n {
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #fff;
+  color: #333;
+  border-color: #eee;
+}
+
+.ucalc-btn.n:focus {
+  background-color: #e6e6e6;
+  color: #333;
+  border-color: #8c8c8c;
+}
+
+.ucalc-btn.n:hover {
+  background-color: #e6e6e6;
+  color: #333;
+  border-color: #8c8c8c;
+}
+
+.ucalc-btn.n:active {
+  background-color: #c0c0c0;
+  color: #333;
+  border-color: #adadad;
+}
+
+.ucalc-btn.xx {
+  font-size: 24px;
+  background-color: #fff;
+  color: #333;
+  border-color: #eee;
+}
+
+.ucalc-btn.xx:focus {
+  background-color: #e6e6e6;
+  color: #333;
+  border-color: #8c8c8c;
+}
+
+.ucalc-btn.xx:hover {
+  background-color: #e6e6e6;
+  color: #333;
+  border-color: #8c8c8c;
+}
+
+.ucalc-btn.xx:active {
+  background-color: #c0c0c0;
+  color: #333;
+  border-color: #adadad;
+}
+
+#ucalc-title {
+  float: left;
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+.ucalc-display {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: right;
+  line-height: 20px;
+  font-size: 18px;
+  width: 100%;
+  height: 20px;
+  overflow: hidden;
+}
+
+.ucalc-display.e {
+  position: relative;
+}
+
+.ucalc-display #e-box {
+  width: 99999px;
+  display: block;
+  position: absolute;
+  right: 0;
+}
+
+.ucalc-display.r {
+  line-height: 40px;
+  font-size: 27px;
+  height: 40px;
+}
+
+/*# sourceMappingURL=ucalc-1.0.1.css.map */
