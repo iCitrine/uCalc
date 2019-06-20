@@ -28,3 +28,17 @@
     font-size: 27px;
     height: 40px;
 }
+
+.ucalc-btn sub,
+.ucalc-btn sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+.ucalc-btn sup {
+  top: -.5em;
+}
+.ucalc-btn sub {
+  bottom: -.25em;
+}
